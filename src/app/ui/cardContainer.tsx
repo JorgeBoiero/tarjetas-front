@@ -1,9 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "./card";
 import styles from "../ui/home.module.css";
 import StatefulForm from "./statefulForm";
-import { useFormState } from "react-dom";
 import { fetchData } from "../lib/data";
 
 
@@ -29,33 +28,26 @@ import { fetchData } from "../lib/data";
       lastName: "Leon",
       expirationDate: "01/26",
     },
-  ];
-
-  
- /*  const beData = fetchData()
-  console.log("🚀 ~ file: cardContainer.tsx:35 ~ cards:", beData) */
-  
+  ]; 
 
   const CardContainer = () => {
+
+    const [ cards, setCards ] =useState(cardInitialData)
    function handleDeleteCard (id:{id:string}){
-      console.log("🚀 ~ file: cardContainer.tsx:37 ~ handleDeleteCard ~ id:", id)
-/*       const updatedData = cardInitialData.filter(item => item.id !== id);
-        console.log("🚀 ~ file: cardContainer.tsx:38 ~ handleDeleteCard ~ updatedData:", updatedData)
+     
+      const updatedData = cards.filter(item => item.id !== id);
+      setCards(updatedData)
         
       console.log(`Card ${id} eliminada`);
-      return updatedData */
+      return updatedData
     };
-  
-/*     const deleteCardWithId = handleDeleteCard.bind(null, id)
-    const [ state, formAction ] = useFormState(handleDeleteCard, cardInitialData) */
-    
-  /*     const [first, carData] = useFormState(cardInitialData) */
+
 
   return (
         <div>
           <p className={styles.title}>Tarjetas</p>
           <div className={styles.container}>
-            {cardInitialData.map((item) => (
+            {cards.map((item) => (
               <Card
                 key={item.id}
                 id={item.id}
