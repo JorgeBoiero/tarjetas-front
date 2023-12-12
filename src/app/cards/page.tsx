@@ -1,7 +1,7 @@
-import CardContainer from "./ui/cardContainer";
+import CardContainer from "../ui/cardContainer";
 import { Suspense } from "react";
-import { CardsSkeleton } from "./ui/skeletons";
-import { getCards } from "./lib/data";
+import { CardsSkeleton } from "../ui/skeletons";
+import { getCards } from "../lib/data";
 
 export default async function Home() {
   

@@ -11,12 +11,14 @@
   font-weight: 600;
 
 }
-
+.cardContainer{
+  width: 41rem;
+}
 .container{
   margin-top: 1.25rem;
   display:flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+
   align-items: flex-start;
   gap: 1.25rem;
 }
@@ -30,10 +32,11 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  flex: 0 1 calc(50% - 20px); 
+  flex: 0 0 calc(50% - 20px);
   justify-content: space-between;
   gap: 0.5rem;
-  min-width: 10rem;
+  width:16rem;
+
 }
 
 .itemSection{
