@@ -20,7 +20,7 @@ export function CardSkeleton() {
 export function CardsSkeleton() {
   return (
     <>
-    <h1>Hello</h1>
+      
       <CardSkeleton />
       <CardSkeleton />
       <CardSkeleton />

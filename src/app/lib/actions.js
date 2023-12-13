@@ -19,13 +19,14 @@ Las acciones del servidor son funciones. Esto significa que se pueden reutilizar
 Las acciones del servidor heredan el tiempo de ejecución de la página o el diseño en el que se utilizan.*/
 
 export async function deleteCard(cardId, res) {
+  'use server'
   try {
     await axios.delete(`http://localhost:3000/cards/${cardId}`);
 
     console.log(`Card con ID ${cardId} eliminado correctamente`);
 
     //location.reload();
-    revalidatePath('/cards');
+    revalidatePath('http://localhost:3001');
   } catch (error) {
     console.error("Error al eliminar el objeto:", error);
   }

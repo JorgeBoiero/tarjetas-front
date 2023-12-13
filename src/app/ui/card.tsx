@@ -1,9 +1,9 @@
-/* "use client"; */
+'use server'
 import styles from "../ui/home.module.css";
 import { deleteCard } from "../lib/actions";
 import formatCardNumber from "../lib/utils";
 
-export function Card({
+export async function Card({
   id,
   number,
   firstname,
@@ -18,9 +18,7 @@ export function Card({
   readonly expirationDate: string;
   readonly onDelete: (data: string) => void;
 }) {
-  const deleteCardWithId = deleteCard.bind(null, id);
-
-  
+  const deleteCardWithId =  deleteCard.bind(null, id);
   const cardNumberFormated = formatCardNumber(number);
 
   return (

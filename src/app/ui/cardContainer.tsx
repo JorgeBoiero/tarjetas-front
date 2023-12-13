@@ -1,7 +1,7 @@
-"use client";
-import React, { useState, useEffect } from "react";
+'use server'
 import { Card } from "./card";
 import styles from "../ui/home.module.css";
+import { getCards } from "../lib/data";
 
 interface Card {
   id?: string;
@@ -14,8 +14,8 @@ interface Card {
 interface Props {
   cards: Card[];
 }
-const CardContainer = ({ cards }) => {
-  const [data, setData] = useState(cards);
+async function CardContainer(){
+  const cards = await getCards()
 
   return (
     <div className={styles.cardContainer}>
