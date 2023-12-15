@@ -25,7 +25,6 @@ export async function deleteCard(cardId, res) {
 
     console.log(`Card con ID ${cardId} eliminado correctamente`);
 
-    //location.reload();
     revalidatePath('http://localhost:3001');
   } catch (error) {
     console.error("Error al eliminar el objeto:", error);
